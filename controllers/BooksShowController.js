@@ -1,7 +1,7 @@
 angular.module('libraryApp')
   .controller('BooksShowController', BooksShowController);
 
-  var endpoint = 'https://super-crud.herokuapp.com/books';
+var endpoint = 'https://super-crud.herokuapp.com/books';
 
 BooksShowController.$inject=['$http', '$routeParams', '$location'];
 function BooksShowController($http, $routeParams, $location) {
@@ -16,17 +16,7 @@ function BooksShowController($http, $routeParams, $location) {
     console.log('There was an error getting the data', response);
   });
 
-  vm.editBook = function (book) {
-  $http({
-    method: 'PUT',
-    url: '/api/albums/'+ $routeParams.id + '/songs/' + song._id ,
-    data: song
-  }).then(function successCallback(json) {
-    // don't need to do anything!
-  }, function errorCallback(response) {
-    console.log('There was an error editing the data', response);
-  });
-}
+
 
 
 };

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
 
-    <form class="form-horizontal" ng-submit="albumsIndexCtrl.createAlbum()">
+    <form class="form-horizontal" ng-submit="booksIndexCtrl.createBook()">
       <fieldset>
 
         <!-- Form Name -->
@@ -11,7 +11,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label">Book Name</label>
           <div class="col-md-4">
-          <input id="name" ng-model="albumsIndexCtrl.newAlbum.title" type="text" class="form-control input-md" required="">
+          <input id="name" ng-model="booksIndexCtrl.newBook.title" type="text" class="form-control input-md" required="">
           </div>
         </div>
 
@@ -19,7 +19,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label">Author Name</label>
           <div class="col-md-4">
-          <input ng-model="albumsIndexCtrl.newAlbum.author" type="text" class="form-control input-md">
+          <input ng-model="booksIndexCtrl.newBook.author" type="text" class="form-control input-md">
           </div>
         </div>
 
@@ -27,7 +27,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label">Release Date</label>
           <div class="col-md-4">
-          <input ng-model="albumsIndexCtrl.newAlbum.releaseDate" type="text" class="form-control input-md">
+          <input ng-model="booksIndexCtrl.newBook.releaseDate" type="text" class="form-control input-md">
           </div>
         </div>
 
@@ -35,14 +35,14 @@
         <div class="form-group">
           <label class="col-md-4 control-label">Book Cover Image</label>
           <div class="col-md-4">
-            <input ng-model="albumsIndexCtrl.newAlbum.image" type="text" class="form-control input-md">
+            <input ng-model="booksIndexCtrl.newBook.image" type="text" class="form-control input-md">
           </div>
         </div>
 
 
         <!-- Button -->
         <div class="form-group">
-          <label class="col-md-4 control-label">Create New Book</label>
+          <label class="col-md-4 control-label">Save New Book</label>
           <div class="col-md-4">
             <button class="btn btn-primary">Submit</button>
           </div>
