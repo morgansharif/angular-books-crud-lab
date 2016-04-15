@@ -15,8 +15,4 @@ function BooksShowController($http, $routeParams, $location) {
   }, function errorCallback(response) {
     console.log('There was an error getting the data', response);
   });
-
-
-
-
-};
+}

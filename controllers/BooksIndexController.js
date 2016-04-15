@@ -33,7 +33,22 @@ function BooksIndexController( $http ) {
     }).then(function successCallback(response) {
       vm.books.push(response.data);
     }, function errorCallback(response) {
-      console.log('There was an error editing the data', response);
+      console.log('There was an error creating the book', response);
     });
   };
-}
+  vm.deleteBook = function(book){
+    console.log("DELETING: "+ book._id);
+    $http({
+      method: 'DELETE',
+      url: endpoint + '/' + book._id,
+    }).then(function successCallback(response) {
+      var index = vm.books.indexOf(book);
+      vm.books.splice(index, 1);
+    }, function errorCallback(response) {
+      console.log('There was an error removing the book:', response);
+    });
+  };
+
+
+
+}//end BooksShowController
