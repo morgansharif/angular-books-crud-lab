@@ -1,4 +1,62 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+
+    <form class="form-horizontal" ng-submit="albumsIndexCtrl.createAlbum()">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Add New Book</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Book Name</label>
+          <div class="col-md-4">
+          <input id="name" ng-model="albumsIndexCtrl.newAlbum.title" type="text" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Author Name</label>
+          <div class="col-md-4">
+          <input ng-model="albumsIndexCtrl.newAlbum.author" type="text" class="form-control input-md">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Release Date</label>
+          <div class="col-md-4">
+          <input ng-model="albumsIndexCtrl.newAlbum.releaseDate" type="text" class="form-control input-md">
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Book Cover Image</label>
+          <div class="col-md-4">
+            <input ng-model="albumsIndexCtrl.newAlbum.image" type="text" class="form-control input-md">
+          </div>
+        </div>
+
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Create New Book</label>
+          <div class="col-md-4">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
 <h2>Library Books</h2>
-<div ng-repeat="book in booksIndexCtrl.books">
+<div class ="row" ng-repeat="book in booksIndexCtrl.books">
+  <a ng-href="{{book._id}}">LINK</a>
   <h4>{{book.title}}</h4>
+  <img src={{book.image}} style="height:100px" />
+  <span>{{book.author}}</span> /Published:
+  <span>{{book.releaseDate}}</span>
 </div>

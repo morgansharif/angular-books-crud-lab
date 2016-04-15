@@ -16,5 +16,4 @@ function BooksIndexController( $http ) {
     }, function errorCallback(response) {
       console.log('There was an error getting the data', response);
     });
-
 }
