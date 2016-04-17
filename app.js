@@ -1,6 +1,5 @@
 angular.module('libraryApp', ['ngRoute'])
-       .config(config)
-       .controller('BooksShowController', BooksShowController);
+       .config(config);
 
 ////////////
 // ROUTES //

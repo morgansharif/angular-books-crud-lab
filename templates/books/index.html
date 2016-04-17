@@ -1,40 +1,42 @@
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
+<div class="container">
+  <div class="col-sm-8 col-sm-offset-2">
 
-    <form class="form-horizontal" ng-submit="booksIndexCtrl.createBook()">
+    <form class="form-horizontal" ng-submit="booksIndexCtrl.createBook(); addingBook = false">
       <fieldset>
 
         <!-- Form Name -->
         <legend>Add New Book</legend>
-
-        <!-- Text input-->
+        <button ng-hide="addingBook" type="button" class="btn btn-primary" ng-click="addingBook = true"><span class="glyphicon glyphicon-plus"></span> Add Book</button>
+        <button ng-show="addingBook" type="button" class="btn btn-suc" ng-click="addingBook = false"><span class="glyphicon glyphicon-minus"></span> Cancel</button>
+        <div ng-show="addingBook"
+        <!-- Text input -->
         <div class="form-group">
-          <label class="col-md-4 control-label">Book Name</label>
-          <div class="col-md-4">
-          <input id="name" ng-model="booksIndexCtrl.newBook.title" type="text" class="form-control input-md" required="">
+          <label class=" control-label">Book Name</label>
+          <div>
+          <input ng-model="booksIndexCtrl.newBook.title" type="text" class="form-control input-md" required="">
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label">Author Name</label>
-          <div class="col-md-4">
+          <label class=" control-label">Author Name</label>
+          <div>
           <input ng-model="booksIndexCtrl.newBook.author" type="text" class="form-control input-md">
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label">Release Date</label>
-          <div class="col-md-4">
+          <label class=" control-label">Release Date</label>
+          <div>
           <input ng-model="booksIndexCtrl.newBook.releaseDate" type="text" class="form-control input-md">
           </div>
         </div>
 
         <!-- Textarea -->
         <div class="form-group">
-          <label class="col-md-4 control-label">Book Cover Image</label>
-          <div class="col-md-4">
+          <label class=" control-label">Book Cover Image</label>
+          <div>
             <input ng-model="booksIndexCtrl.newBook.image" type="text" class="form-control input-md">
           </div>
         </div>
@@ -42,9 +44,9 @@
 
         <!-- Button -->
         <div class="form-group">
-          <label class="col-md-4 control-label">Save New Book</label>
-          <div class="col-md-4">
-            <button class="btn btn-primary">Submit</button>
+          <label class=" control-label">Save New Book</label>
+          <div>
+            <button class="btn btn-success">Submit</button>
           </div>
         </div>
       </fieldset>
@@ -52,12 +54,17 @@
   </div>
 </div>
 
-<h2>Library Books</h2>
-<div class ="row" ng-repeat="book in booksIndexCtrl.books">
-  <a ng-href="{{book._id}}">LINK</a>
-  <h4>{{book.title}}</h4>
-  <img src={{book.image}} style="height:100px" />
-  <span>{{book.author}}</span> /Published:
-  <span>{{book.releaseDate}}</span>
-  <button class="btn btn-danger" ng-click="booksIndexCtrl.deleteBook(book)">Delete</button>
+<div class="col-sm-10 col-sm-offset-1">
+  <h2>Library Books</h2>
+  <div class="panel panel-default" ng-repeat="book in booksIndexCtrl.books">
+    <div class="panel-heading"><h4>{{book.title}}</h4></div>
+    <div class="panel-body">
+      <a ng-href="{{book._id}}"><span  class="glyphicon glyphicon-edit pull-right"></span></a>
+      <img src={{book.image}} style="height:100px">
+      <p>
+        <b>By:</b> {{book.author}}<br />
+        <b>Published:</b> {{book.releaseDate}}
+      </p>
+    </div>
+  </div>
 </div>
